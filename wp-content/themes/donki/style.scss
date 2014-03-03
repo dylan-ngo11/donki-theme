@@ -1,0 +1,468 @@
+/*
+	Theme Name: Fine18WP
+	Theme URI: http://hainhay.com/
+	Author: ThemeShaper
+	Author URI: http://hainhay.com/
+	Description: The Fine18WP theme is a simple, minimalist theme based on Underscores and the original Shape Theme by Ian Stewart. It was created especially as a learning theme for The ThemeShaper WordPress Theme Tutorial: 2nd Edition.
+	Version: 1.0
+	License: GNU General Public License
+	License URI: license.txt	
+	This theme, like WordPress, is licensed under the GPL.	
+*/
+
+/* FONT 
+=============================*/
+@font-face {	
+	font-family: 'Arvobold';	
+	src: url('fonts/ArvoBold.ttf') format('truetype');		
+}
+
+@font-face {	
+	font-family: 'Arvoreg';	
+	src: url('fonts/ArvoRegular.ttf') format('truetype');		
+}
+
+@font-face {	
+	font-family: 'Ralewayreg';	
+	src: url('fonts/RalewayRegular.ttf') format('truetype');		
+}
+
+/* GLOBAL
+=============================*/
+body {
+	color: #3e3e3e;
+	font-size: 16px;
+	font-size: 16rem;		
+	line-height: 24px!important;
+	font-family: Ralewayreg, sans-serif!important;
+	background: url(images/bg.jpg) repeat-y 51.20%;	
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: Arvoreg, serif;
+}
+
+h1 { font-size: 30px; font-size: 3rem; line-height: 40px; }
+
+ul { list-style: none; }
+a { text-decoration: none!important; }
+
+.site-header, .site-main, .site-footer {
+	width: 100%;
+	float: left;
+}
+
+/* HEADER
+=============================*/
+
+.site-header {	
+	height: 60px;
+	z-index: 100;	
+	transition: .5s;
+	background: #ea6045;	
+
+	&.sticky {		
+		height: 40px!important;
+		position: fixed;
+		top: 0;
+		opacity: 0.9;
+		filter: alpha(opacity=90); /* IE6-IE8 */
+		transition: .5s;
+
+		.site-title {
+			font-size: 24px;
+			margin: 1px 0 0;
+			transition: .5s;
+		}
+
+		.site-navigation ul {
+			margin-top: 10px;
+
+			li a {
+				transition: .5s;
+				padding: 11px 20px 8px;
+			}
+		}
+	}
+
+	.site-title {
+		margin: 12px 0 0;
+		transition: .5s;
+
+		a {
+			color: #fff;
+			font-family: Arvobold, serif;
+			text-transform: uppercase;			
+		}
+	}
+
+	.site-navigation ul {
+		transition: .5s;
+		padding: 0;
+		margin-top: 23px;
+
+		li {			
+			margin-left: -4px;
+			display: inline-block;				
+
+			a {
+				color: #fff;
+				font-size: 18px;
+				font-size: 1.8rem;				
+				padding: 25px 20px 15px;
+
+				&:hover {
+					background: #f8ca4d;
+				}								
+			}
+
+			&.current-menu-item a {
+				background: #f8ca4d;
+			}
+		}		
+	}
+}
+
+/* CONTAINER
+=============================*/
+
+.site-main {
+	margin: 55px 0 60px;	
+
+	#primary {
+		.site-cat aside {
+			margin: 0 0 60px 0;		
+
+			h1 {			
+				font-size: 16px;
+				font-size: 1.6rem;
+				text-transform: uppercase;			
+				margin-bottom: -5px;
+
+				a {				
+					width: 100%;
+					display: block;
+					color: #ea6045;
+					padding: 0 10px;
+					border-radius: 3px;
+
+					&:hover, 
+					&.current {
+						color: #fff;
+						background: #f8ca4d;
+					}			
+				}
+			}
+
+			ul {
+				padding: 0;
+
+				li {
+					padding: 5px 10px;
+
+					a {
+						width: 100%;
+						display: block;
+						color: #bcbcbc;
+
+						&:hover,
+						&.current {
+							color: #3e3e3e;
+						}				
+					}
+				}
+			}
+		}
+
+		.site-content {		
+			#block-area {			
+				margin: 11px 0 45px;
+				padding: 5px 30px 10px;
+				border: 1px solid #e2e2e2;
+				border-radius: 3px;			
+				background: #f9f9f9;			
+			}	
+
+			article {			
+				float: left;
+				margin: 0 0 60px 0;			
+
+				.entry-header {
+					width: 100%;
+					border-bottom: 1px solid #e2e2e2;			
+
+					.entry-title a {
+						color: #3e3e3e;
+
+						&:hover {
+							color: #ea6045;
+						}
+					}
+
+					.entry-author {				
+						color: #bcbcbc;
+						font-size: 16px;
+						font-size: 1.6rem;
+						margin: -5px 0 15px;
+
+						a {
+							color: #79a0bb;
+
+							&:hover {
+								color: #ea6045;
+							}
+						}
+					}
+				}
+
+				.entry-meta {
+					margin-bottom: 40px;
+					padding: 0;
+
+					li {
+						color: #bcbcbc;
+						display: inline-block;
+						padding-left: 25px;
+						margin-right: 40px;
+						background: url(images/site-icon.png) no-repeat;
+
+						&.entry-date {
+							background-position: 0 2px;
+						}
+						
+						&.entry-comments {						
+							background-position: 0 -23px;
+
+							a { color: #bcbcbc; 
+								&:hover { color: #ea6045; }
+							}
+						}					
+					}
+				}
+
+				.entry-content {
+					width: 100%;
+
+					p {
+						margin: 0 0 30px 0;			
+						line-height: 24px;
+					}
+				}
+
+				.more-link {			
+					color: #fff;
+					width: 150px;
+					float: left;
+					margin: 10px 0 0 0;
+					line-height: 40px;
+					text-align: center;
+					border-radius: 3px;
+					box-shadow: 3px 3px 0 rgba(0,0,0,.5);				
+					transition: .2s;
+					background: #79a0bb;
+
+					&:hover {
+						transition: .2s;
+						background: #3f5666;
+					}
+				}
+			}
+
+			.site-pagination {
+				padding: 0;
+				float: right;
+
+				li {				
+					display: inline-block;				
+
+					a {
+						color: #ea6045;
+						font-size: 16px;									
+						font-family: Arvoreg, serif;				
+						padding: 5px 10px;
+
+						&:hover,
+						&.current {
+							color: #fff;
+							border-radius: 3px;
+							background: #ea6045;						
+						}					
+					}				
+				}
+			}
+		}
+	}
+
+	#secondary {
+		margin-top: 10px;
+
+		.site-subscribe {
+			color: #fff;
+			padding: 10px 20px 20px 20px;
+			border-radius: 3px;
+			background: #3f5666;
+
+			h2 {				
+				text-transform: uppercase;
+				font-size: 16px;
+				font-size: 1.6rem;
+				margin-bottom: 20px;				
+			}
+
+			p {
+				font-size: 14px;
+				font-size: 1.4rem;
+				margin-bottom: 20px;
+			}
+
+			input {
+				color: #bcbcbc;
+				width: 100%;
+				height: 40px;
+				margin-bottom: 20px;
+				padding: 0 10px;
+				border: 1px solid #fff;
+				border-radius: 3px;
+			}
+		}
+
+		.widget {			
+			float: left;
+			margin: 0 0 25px;
+
+			h1 {			
+				color: #fff;
+				font-size: 16px;
+				font-size: 1.6rem;				
+				text-transform: uppercase;	
+				height: 50px;				
+				line-height: 32px;
+				margin: 0 0 20px -30px;
+				padding: 10px 0 0 30px;				
+				border-radius: 0 3px 3px 0;				
+				background: #ea6045;
+			}
+
+			ul {
+				padding: 0;
+
+				li {
+					float: left;
+					margin: 0 0 20px 0;
+
+					img {
+						width: 80px;
+						height: 80px;
+						float: left;
+						margin: 0 15px 0 0;
+						border-radius: 3px;
+					}
+
+					a {
+						color: #3e3e3e;
+
+						&:hover { color: #ea6045; }
+					}
+				}
+			}
+
+			img {
+				margin: 0 4px 20px 0;
+			}
+		}
+	}
+}
+
+/* FOOTER
+=============================*/
+
+.site-footer {
+	padding: 50px;	
+	background: #3f5666;
+
+	.widget-footer {
+		h1 {
+			color: #fff;
+			font-size: 16px;
+			font-size: 16px;
+			text-transform: uppercase;	
+		}
+
+		ul {
+			padding: 0;
+
+			li {
+				margin-bottom: 20px;
+
+				a {
+					color: #bcbcbc;
+
+					&:hover { color: #fff; }
+				}
+			}
+		}
+	}
+}
+
+/* CONTACT PAGE
+=============================*/
+
+iframe {
+	width: 100%;
+	float: left;
+	margin: 20px 0;
+}
+
+.site-content h5 {	
+	width: 100%;
+	line-height: 24px;
+}
+
+.wpcf7 {
+	width: 100%;
+	float: left;
+
+	p {
+		width: 200px;
+		margin-bottom: 20px;
+		font-weight: bold;
+	}
+
+	input[type="email"],
+	input[type="text"],
+	textarea {
+		width: 500px;
+		height: 40px;
+		border: 1px solid #e3e3e3;
+		border-radius: 3px;
+		padding: 0 20px;
+	}
+
+	textarea {
+		height: 150px;
+	}
+
+	input[type='submit'] {
+		color: #fff;
+		border: none;
+		width: 150px;
+		height: 40px;
+		border-radius: 3px;
+		box-shadow: 3px 3px 0 rgba(0,0,0,.5);
+		transition: .2s;
+		background: #79a0bb;
+
+		&:hover {
+			background: #3f5666;
+			transition: .2s;
+		}
+	}
+}	
+
+
+
+
+
+
+
+

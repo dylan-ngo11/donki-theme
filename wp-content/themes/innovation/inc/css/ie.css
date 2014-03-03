@@ -1,0 +1,27 @@
+.commentlist cite, .commentlist span {
+    font-size: 14px;
+    float: left;
+    padding-right: 4px;
+}
+
+.commentlist p {
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.commentmetadata {
+    font-size: 13px;
+    line-height: 14px;
+}
+	
+.commentlist .reply {
+    font-size: 13px;
+}
+
+#sidebar ul li * {
+    text-indent: -15px;
+}
+
+#sidebar ul li ul * {
+    text-indent: 0;
+}

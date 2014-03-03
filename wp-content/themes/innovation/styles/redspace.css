@@ -1,0 +1,169 @@
+/* Innovation red style - redspace.css */
+
+body {
+    background: url("redspace/bg.jpg") repeat-x #140a05 0 top;
+    color: #333;
+}
+    
+a:link, a:visited {
+    color: #941919;
+}
+
+#head h1 {
+    color: #fff;
+}
+    
+#head h3 {
+    color: #c4acaa;
+}
+    
+#nav {
+    background: url("redspace/trans.png") repeat;
+    border: 1px solid #5b2022;
+}
+    
+#nav ul li a:link, #nav ul li a:visited {
+    color: #b99e94;
+}
+    
+#nav ul li.current_page_item a:link, #nav ul li.current_page_item a:visited {
+    background: url("redspace/transred.png") repeat;
+    color: #cdb9b2;
+}
+    
+#nav ul li a:hover, #nav ul li a:active, #nav ul li a:focus {
+    color: #cdb9b2;
+}
+
+#content {
+    background-color: #f9f9f3;
+    border: 1px solid #5b2022;
+    border-top: none;
+}
+
+.work a:link img, .work a:visited img {
+    border: 5px solid #f2e9ea;
+}
+    
+.work a:hover img, .work a:active img, .work a:focus img {
+    border: 5px solid #8d4846;
+}
+    
+.work a:link, .work a:visited {
+    color: #333;
+}
+
+ul.twitter li.twitter-item {
+    background-color: #f6f5ed;
+    border: 1px solid #eae9de;
+}
+    
+.flickr a:link img, .flickr a:visited img {
+    border: 3px solid #f2e9ea;
+}
+    
+.flickr a:hover img, .flickr a:active img, .flick a:focus img {
+    border: 3px solid #8d4846;
+}
+    
+.blogpost, .worksearch {
+    border-bottom: 1px solid #e8e3c8;
+}
+
+h2 a:link, h2 a:visited {
+    color: #333;
+}
+    
+ul.meta li {
+    border-left: 1px solid #e3e8ed;
+}
+
+#sidebar ul li#search form #s {
+    background: url("redspace/search.png") no-repeat right #f6f6ec;
+    border: 1px solid #E8E3C8;
+}
+    
+#sidebar ul li#search form #s:focus {
+    border: 1px solid #dad4b6;
+}
+    
+#sidebar ul li ul {
+    background-color: #f6f6ec;
+    border: 1px solid #E8E3C8;
+}
+    
+#sidebar ul li ul li {
+    list-style: url("redspace/bullet.gif");
+}
+    
+#sidebar ul li a:link, #sidebar ul li a:visited {
+    color: #333;
+}
+
+p.footer {
+    color: #554740;
+}
+    
+p.footer a:link, p.footer a:visited {
+    color: #554740;
+    border-bottom: 1px dashed;
+}
+    
+p.footer a:hover {
+    border-bottom: 1px solid;
+    text-decoration: none;
+}
+
+/* Comment List */
+.commentlist li .avatar { 
+    border: 2px solid #f2e9ea;
+}
+
+.commentlist cite a:link, .commentlist cite a:visited {
+    color: #333;
+}
+    
+.commentlist .commentmetadata a:link:first-child, .commentlist .commentmetadata a:visited:first-child {
+    color: #333;
+}
+
+.thread-alt {
+    background-color: #F6F6EC;
+}
+    
+.thread-even {
+    background-color: #F9F9F3;
+}
+    
+.depth-1 {
+    border: 1px solid #E8E3C8;
+}
+
+.even, .alt {
+    border-left: 1px solid #E8E3C8;
+}
+
+input, textarea {
+    background-color: #F6F6EC;
+    border: 1px solid #E8E3C8;
+}
+    
+input:focus, textarea:focus {
+    border: 1px solid #dad4b6;
+}
+    
+p.wp-caption-text {
+    color: #555;
+}
+
+blockquote {
+    border-left: 2px solid #e3e8ed;
+}
+
+ul.bloglist li a:link, ul.bloglist li a:visited {
+    color: #333;
+}
+    
+ul.bloglist li a:hover, ul.bloglist li a:active, ul.bloglist li a:focus {
+    background-color: #f2e9ea;
+}
