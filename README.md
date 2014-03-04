@@ -1,3 +1,3 @@
 <h1>Conki Wordpress responsive theme</h1>
 <h3>by Mauris team, Haintheme all right reserved.</h3>
-<p>Author: Duongancol</p>
+<p>Author: Duongancol + DA</p>
