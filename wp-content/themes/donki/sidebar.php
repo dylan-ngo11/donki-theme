@@ -10,11 +10,5 @@
 	?>	
 	<?php endif; ?>
 
-	<aside class="widget">
-		<h1>Advertisement</h1>
-		<img src="<?php bloginfo('template_directory'); ?>/images/advertise1.png" alt="#" />
-		<img src="<?php bloginfo('template_directory'); ?>/images/advertise2.png" alt="#" />
-		<img src="<?php bloginfo('template_directory'); ?>/images/advertise3.png" alt="#" />
-		<img src="<?php bloginfo('template_directory'); ?>/images/advertise4.png" alt="#" />
-	</aside><!-- .widget -->	
+		
 </div><!-- #secondary .widget-area -->	

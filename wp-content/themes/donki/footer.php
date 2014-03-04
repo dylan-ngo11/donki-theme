@@ -6,17 +6,7 @@
 								if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('Footer Sidebar')) :
 							?>	
 							<?php endif; ?>
-							<aside class="widget-footer col-lg-3">
-								<h1>Categories</h1>
-								<ul>
-									<li><a href="#">Apps Design</a></li>
-									<li><a href="#">Graphics Design</a></li>
-									<li><a href="#">Online Business</a></li>
-									<li><a href="#">User Experience</a></li>
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">WordPress</a></li>
-								</ul>
-							</aside><!-- .widget-footer -->
+							
 						</div><!-- .row -->	
 					</div><!-- .container -->
 				</div><!-- .site-info -->
