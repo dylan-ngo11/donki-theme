@@ -35,14 +35,14 @@
 -->
 <!--     contained in this file into your site.  -->
 <!--
- generator="WordPress/3.8.1" created="2014-03-03 10:57" 
+ generator="WordPress/3.8.1" created="2014-03-05 14:29" 
 -->
 <rss xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/" version="2.0">
 <channel>
 <title>Donki</title>
 <link>http://localhost:8888/wordpress</link>
 <description>Just another WordPress site</description>
-<pubDate>Mon, 03 Mar 2014 10:57:11 +0000</pubDate>
+<pubDate>Wed, 05 Mar 2014 14:29:14 +0000</pubDate>
 <language>en-US</language>
 <wp:wxr_version>1.2</wp:wxr_version>
 <wp:base_site_url>http://localhost:8888/wordpress</wp:base_site_url>
@@ -62,6 +62,46 @@
 </wp:author_last_name>
 </wp:author>
 <wp:category>
+<wp:term_id>9</wp:term_id>
+<wp:category_nicename>coding</wp:category_nicename>
+<wp:category_parent/>
+<wp:cat_name>
+<![CDATA[ Coding ]]>
+</wp:cat_name>
+</wp:category>
+<wp:category>
+<wp:term_id>12</wp:term_id>
+<wp:category_nicename>design</wp:category_nicename>
+<wp:category_parent/>
+<wp:cat_name>
+<![CDATA[ Design ]]>
+</wp:cat_name>
+</wp:category>
+<wp:category>
+<wp:term_id>10</wp:term_id>
+<wp:category_nicename>html</wp:category_nicename>
+<wp:category_parent>coding</wp:category_parent>
+<wp:cat_name>
+<![CDATA[ HTML ]]>
+</wp:cat_name>
+</wp:category>
+<wp:category>
+<wp:term_id>11</wp:term_id>
+<wp:category_nicename>javascript</wp:category_nicename>
+<wp:category_parent>coding</wp:category_parent>
+<wp:cat_name>
+<![CDATA[ Javascript ]]>
+</wp:cat_name>
+</wp:category>
+<wp:category>
+<wp:term_id>14</wp:term_id>
+<wp:category_nicename>mobile-design</wp:category_nicename>
+<wp:category_parent>design</wp:category_parent>
+<wp:cat_name>
+<![CDATA[ Mobile Design ]]>
+</wp:cat_name>
+</wp:category>
+<wp:category>
 <wp:term_id>2</wp:term_id>
 <wp:category_nicename>portfolio</wp:category_nicename>
 <wp:category_parent/>
@@ -75,6 +115,14 @@
 <wp:category_parent/>
 <wp:cat_name>
 <![CDATA[ Uncategorized ]]>
+</wp:cat_name>
+</wp:category>
+<wp:category>
+<wp:term_id>13</wp:term_id>
+<wp:category_nicename>web-design</wp:category_nicename>
+<wp:category_parent>design</wp:category_parent>
+<wp:cat_name>
+<![CDATA[ Web design ]]>
 </wp:cat_name>
 </wp:category>
 <wp:category>
@@ -1237,6 +1285,371 @@ http://localhost:8888/wordpress/wp-content/uploads/2014/02/screeshot.png
 <![CDATA[
 a:5:{s:5:"width";i:982;s:6:"height";i:579;s:4:"file";s:21:"2014/02/screeshot.png";s:5:"sizes";a:2:{s:9:"thumbnail";a:4:{s:4:"file";s:21:"screeshot-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";}s:6:"medium";a:4:{s:4:"file";s:21:"screeshot-300x176.png";s:5:"width";i:300;s:6:"height";i:176;s:9:"mime-type";s:9:"image/png";}}s:10:"image_meta";a:10:{s:8:"aperture";i:0;s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";i:0;s:9:"copyright";s:0:"";s:12:"focal_length";i:0;s:3:"iso";i:0;s:13:"shutter_speed";i:0;s:5:"title";s:0:"";}}
 ]]>
+</wp:meta_value>
+</wp:postmeta>
+</item>
+<item>
+<title>A Detailed Introduction To Custom Elements</title>
+<link>http://localhost:8888/wordpress/?p=33</link>
+<pubDate>Wed, 05 Mar 2014 10:50:01 +0000</pubDate>
+<dc:creator>
+<![CDATA[ admin ]]>
+</dc:creator>
+<guid isPermaLink="false">http://localhost:8888/wordpress/?p=33</guid>
+<description/>
+<content:encoded>
+<![CDATA[
+You’ve probably heard all the noise about <a href="http://w3c.github.io/webcomponents/explainer/">Web Components</a>and how they’re going to change Web development forever. If you haven’t, you’ve either been living under a rock, are reading this article by accident, or have a full, busy life that doesn’t leave you time to read about unstable and speculative Web technologies. Well, not me.
+ 
+ Web Components are a suite of connected technologies aimed at making elements reusable across the Web. The lion’s share of the conversation has been around Shadow DOM, but probably the most transformative technology of the suite is Custom Elements,a method of defining your own elements, with their own behavior and properties.<!--more-->
+ 
+ That’s quite an ambiguous description, so the point of this article is to explain what Custom Elements are for, why they’re so transformative and how to use them. Please note, first, that I’ll talk about custom elements (common noun) when discussing the concept and Custom Elements (proper name) when discussing the technology, and secondly, that my humor tends to wear very thin very quickly. Let’s push forward.
+ <h3>“What’s The Point Of Custom Elements?”</h3>
+ The basic idea is that if you create an element that always performs the same role and has the same set of properties and functions applied to it, then you should be able to name it after what it does. We have the <code>video</code> element for displaying video, the <code>select</code>element for displaying a select box, the <code>img</code> element for displaying images (and saving us from typing two characters whenever we write it). A lot of elements describe their own function.
+ 
+ But the Web today has to do a lot more work than it did previously, and HTML can’t always keep up with the rate of change. So Custom Elements are about giving us, the developers, flexibility to create elements based on their function and giving us low-level access to define their properties.
+ 
+ If the elements we create become well established, they could become a fully standardized part of a future HTML specification. The things we make could define the future of the things we make.
+ <h3>“But Can’t We Create Custom Elements Right Now In HTML?”</h3>
+ You’re right, notional reader, we can. It’s disgustingly easy. Just open your favorite text editor and make up an element in an HTML document, like so:
+ <pre><code>&lt;apes&gt;…&lt;/apes&gt;
+ </code></pre>
+ Open it in a browser. It works. You can style it, attach JavaScript events to it. It may not be “valid” (who cares about that these days, right, kids?), but it works. You can do it with any name you like, and it’ll create a new inline element.
+ 
+ Well, yes. Sure. You could certainly do that, and perhaps it would even make your markup a little more understandable to other people — but that’s really the only advantage it brings. Custom Elements are smarter than that, and they bring real, measurable benefits. We’ll get to the benefits of Custom Elements in a moment; first, I want to show how easy it is to make one.
+ <h3>“Are Custom Elements Easy To Create?”</h3>
+ They are, I just told you so in the previous sentence. The first step is to think of a good name. The only rule here is that, to avoid clashing with current or future HTML elements, you must use a hyphen somewhere in the name. For example:
+ <pre><code>&lt;great-apes&gt;…&lt;/great-apes&gt;
+ </code></pre>
+ When you’ve decided on a name, the next step is to register it in the DOM, which is done by passing the name in as an argument in the JavaScript <code>registerElement()</code>method, like so:
+ <pre><code>document.registerElement('great-apes');
+ </code></pre>
+ Now the DOM will recognize your newly registered <code>great-apes</code> element and the real fun can start. By the way, to confuse the terminology even further, an element created like this that’s not defined in the HTML specification is known as a “custom tag,” so don’t be surprised if I use that term.
+ <h3>“I Still Don’t Get What The Big Deal Is”</h3>
+ Bear with me, impatient notional reader. The big difference between puny custom elements and mighty custom tags (I hope you’re not surprised by me using that term) is the interface that’s exposed to the DOM. Custom elements, unregistered and unrecognized, use the <code>HTMLUnknownElement</code> interface, whereas registered and recognized custom tags use the <code>HTMLElement</code> interface.
+ 
+ What’s the difference? With an <code>HTMLElement</code>, we can add our own methods and properties, creating essentially a per-element API. Wait, I understated how amazing that is: a per-element API!!! Yes, every custom tag can have its own API.
+ 
+ To initiate this, you would first define a new prototype, then attach your properties and methods to it. In this example, I’m creating a method named <code>hoot()</code> that logs a message to the console:
+ <pre><code>var apeProto = Object.create(HTMLElement.prototype);
+ apeProto.hoot = function() {
+ console.log('Apes are great!');
+ }
+ </code></pre>
+ The next step is to register the element, just as before, only this time adding an argument in the options of <code>registerElement()</code> to state that it should use our newly defined prototype:
+ <pre><code>document.registerElement('great-apes', {prototype: apeProto});
+ </code></pre>
+ When this is done, you can query your element in the DOM and call the method:
+ <pre><code>var apes = document.querySelector('great-apes');
+ apes.hoot();
+ </code></pre>
+ Now, this is the simplest example I could possibly think of, but just take a minute to consider how this could be extended further still: adding unique properties, attributes and events to each element; putting markup in your element that renders with content passed in as attribute values; even having elements with no UI at all but that perform functions such as database queries. Honestly, the opportunity here is <em>huge</em>.
+ 
+ As a quick example of just how exceptionally useful Custom Elements can be, see<a href="https://github.com/eduardolundgren/google-maps-element">Eduardo Lundgren’s <code>google-maps</code></a> element, which embeds a Google Map and can have options passed in through attribute values, like this:
+ <pre><code>&lt;google-maps latitude="-8.034881" longitude="-34.918377"&gt;&lt;/google-maps&gt;
+ </code></pre>
+ <h3>“Can Existing Elements Be Extended To Use This API?”</h3>
+ Wow, you really ask the most convenient questions. Yes, excitingly, we <em>can</em> make Custom Elements that extend existing elements. Yes, we can create a whole new API for existing HTML elements! I know, this sounds like the ramblings of a madman, right? But it’s true!
+ 
+ As an example, let’s create a table that has our <code>hoot()</code> method attached. To do this, we’d follow all of the steps in the previous section, then make the small addition of a new argument in the options of the <code>registerElement()</code> method, a lá:
+ <pre><code>document.registerElement('great-apes', {
+ prototype: apeProto,
+ extends: 'table'
+ });
+ </code></pre>
+ The value of the <code>extends</code> argument informs the DOM that the custom element is intended to extend the <code>table</code> element. Now, we have to make the <code>table</code> element inform the DOM that it wants to be extended, using the <code>is</code> attribute:
+ <pre><code>&lt;table is="great-apes"&gt;…&lt;/table&gt;
+ </code></pre>
+ The humble <code>table</code> element may now have its own API. For example, it could query its own data in a standardized interface. A table that has an API to query its own data!!!How can you not be excited by that?
+ 
+ For a real-world example of an extended element, take a look at <a href="https://github.com/eduardolundgren/video-camera-element">Eduardo Lundgren’s<code>video-camera</code></a>, which extends the <code>video</code> element to use live input from <code>getUserMedia():</code>
+ <pre><code>&lt;video is="video-camera"&gt;&lt;/video&gt;
+ </code></pre>
+ <h3>“OK, This Is Cool. What Else?”</h3>
+ A set of callback events (with brilliantly prosaic names) are fired throughout the lifecycle of Custom Events: when an element is created (<code>createdCallback</code>), attached to the DOM (<code>attachedCallback</code>) or detached from the DOM (<code>detachedCallback</code>), or when an attribute is changed (<code>attributeChangedCallback</code>). For example, to run an anonymous function each time a new instance of a custom tag is created in a page, you’d use this:
+ <pre><code>apeProto.createdCallback = function () {…};
+ </code></pre>
+ <h3>“How Do Custom Elements Work With Other Web Components Features?”</h3>
+ Custom Elements have been designed for complete interoperability with the companion features of the Web Components suite (and other generally related features). For example, you could include markup in the <a href="http://www.broken-links.com/2013/04/10/the-template-element/"><code>template</code> element</a>, which wouldn’t be parsed by the browser until the element is initiated.
+ <pre><code>&lt;great-apes&gt;
+ &lt;template&gt;…&lt;/template&gt;
+ &lt;/great-apes&gt;
+ </code></pre>
+ You could ensure that the internal code is encapsulated from the browser and hidden from the end user with Shadow DOM. And sharing your element across multiple files and websites would be simplicity itself using HTML Imports.
+ 
+ If you’re not familiar with any of these other technologies yet, don’t worry: Custom Elements also work perfectly well on their own.
+ <h3>“Can I Use Custom Elements Today?”</h3>
+ Well, no. And yes. These aren’t just some pie-in-the-sky concepts; browser vendors are already working on them: the latest releases of Chrome and Opera have implemented the <code>registerElement()</code> method, and it also recently landed in Firefox Nightly. But, raw Custom Elements aren’t really ready for use in production just yet.
+ 
+ <a href="http://www.flickr.com/photos/mape_s/333862026/"><img title="Gorillas are great apes... Look, it was either this or a screenshot of some JavaScript." alt="Gorillas are great apes... Look, it was either this or a screenshot of some JavaScript." src="http://media.smashingmagazine.com/wp-content/uploads/2014/03/gorillas.jpg" /></a>
+ <em>Gorillas are great apes… Look, it was either this or a screenshot of even more JavaScript code. (Image credits: <a href="http://www.flickr.com/photos/mape_s/333862026/">Marieke IJsendoorn-Kuijpers</a>)</em>
+ 
+ However, there is a way around this, and that’s to use Polymer. In case you haven’t heard of it, it’s an open community project set up to make future Web technologies usable today, and that includes Web Components and, through them, Custom Elements. Polymer is both a development library, which uses native implementations where available and polyfills where not, and a UI library, with common elements and patterns built using its own technology.
+]]>
+</content:encoded>
+<excerpt:encoded>
+<![CDATA[
+You’ve probably heard all the noise about Web Componentsand how they’re going to change Web development forever. If you haven’t, you’ve either been living under a rock, are reading this article by accident, or have a full, busy life that doesn’t leave you time to read about unstable and speculative Web technologies. Well, not me.
+]]>
+</excerpt:encoded>
+<wp:post_id>33</wp:post_id>
+<wp:post_date>2014-03-05 10:50:01</wp:post_date>
+<wp:post_date_gmt>2014-03-05 10:50:01</wp:post_date_gmt>
+<wp:comment_status>open</wp:comment_status>
+<wp:ping_status>open</wp:ping_status>
+<wp:post_name>a-detailed-introduction-to-custom-elements</wp:post_name>
+<wp:status>publish</wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type>post</wp:post_type>
+<wp:post_password/>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="coding">
+<![CDATA[ Coding ]]>
+</category>
+<category domain="category" nicename="html">
+<![CDATA[ HTML ]]>
+</category>
+<wp:postmeta>
+<wp:meta_key>_edit_last</wp:meta_key>
+<wp:meta_value>
+<![CDATA[ 1 ]]>
+</wp:meta_value>
+</wp:postmeta>
+</item>
+<item>
+<title>A Detailed Introduction To Custom Elements</title>
+<link>http://localhost:8888/wordpress/?p=36</link>
+<pubDate>Wed, 05 Mar 2014 10:56:30 +0000</pubDate>
+<dc:creator>
+<![CDATA[ admin ]]>
+</dc:creator>
+<guid isPermaLink="false">http://localhost:8888/wordpress/?p=36</guid>
+<description/>
+<content:encoded>
+<![CDATA[
+You’ve probably heard all the noise about <a href="http://w3c.github.io/webcomponents/explainer/">Web Components</a>and how they’re going to change Web development forever. If you haven’t, you’ve either been living under a rock, are reading this article by accident, or have a full, busy life that doesn’t leave you time to read about unstable and speculative Web technologies. Well, not me.
+ 
+ Web Components are a suite of connected technologies aimed at making elements reusable across the Web. The lion’s share of the conversation has been around Shadow DOM, but probably the most transformative technology of the suite is Custom Elements, a method of defining your own elements, with their own behavior and properties.
+ 
+ That’s quite an ambiguous description, so the point of this article is to explain what Custom Elements are for, why they’re so transformative and how to use them. Please note, first, that I’ll talk about custom elements (common noun) when discussing the concept and Custom Elements (proper name) when discussing the technology, and secondly, that my humor tends to wear very thin very quickly. Let’s push forward.
+ <h3>“What’s The Point Of Custom Elements?”</h3>
+ The basic idea is that if you create an element that always performs the same role and has the same set of properties and functions applied to it, then you should be able to name it after what it does. We have the <code>video</code> element for displaying video, the <code>select</code>element for displaying a select box, the <code>img</code> element for displaying images (and saving us from typing two characters whenever we write it). A lot of elements describe their own function.
+ 
+ But the Web today has to do a lot more work than it did previously, and HTML can’t always keep up with the rate of change. So Custom Elements are about giving us, the developers, flexibility to create elements based on their function and giving us low-level access to define their properties.
+ 
+ If the elements we create become well established, they could become a fully standardized part of a future HTML specification. The things we make could define the future of the things we make.
+ <h3>“But Can’t We Create Custom Elements Right Now In HTML?”</h3>
+ You’re right, notional reader, we can. It’s disgustingly easy. Just open your favorite text editor and make up an element in an HTML document, like so:
+ <pre><code>&lt;apes&gt;…&lt;/apes&gt;
+ </code></pre>
+ Open it in a browser. It works. You can style it, attach JavaScript events to it. It may not be “valid” (who cares about that these days, right, kids?), but it works. You can do it with any name you like, and it’ll create a new inline element.
+ 
+ Well, yes. Sure. You could certainly do that, and perhaps it would even make your markup a little more understandable to other people — but that’s really the only advantage it brings. Custom Elements are smarter than that, and they bring real, measurable benefits. We’ll get to the benefits of Custom Elements in a moment; first, I want to show how easy it is to make one.
+ <h3>“Are Custom Elements Easy To Create?”</h3>
+ They are, I just told you so in the previous sentence. The first step is to think of a good name. The only rule here is that, to avoid clashing with current or future HTML elements, you must use a hyphen somewhere in the name. For example:
+ <pre><code>&lt;great-apes&gt;…&lt;/great-apes&gt;
+ </code></pre>
+ When you’ve decided on a name, the next step is to register it in the DOM, which is done by passing the name in as an argument in the JavaScript <code>registerElement()</code>method, like so:
+ <pre><code>document.registerElement('great-apes');
+ </code></pre>
+ Now the DOM will recognize your newly registered <code>great-apes</code> element and the real fun can start. By the way, to confuse the terminology even further, an element created like this that’s not defined in the HTML specification is known as a “custom tag,” so don’t be surprised if I use that term.
+ <h3>“I Still Don’t Get What The Big Deal Is”</h3>
+ Bear with me, impatient notional reader. The big difference between puny custom elements and mighty custom tags (I hope you’re not surprised by me using that term) is the interface that’s exposed to the DOM. Custom elements, unregistered and unrecognized, use the <code>HTMLUnknownElement</code> interface, whereas registered and recognized custom tags use the <code>HTMLElement</code> interface.
+ 
+ What’s the difference? With an <code>HTMLElement</code>, we can add our own methods and properties, creating essentially a per-element API. Wait, I understated how amazing that is: a per-element API!!! Yes, every custom tag can have its own API.
+ 
+ To initiate this, you would first define a new prototype, then attach your properties and methods to it. In this example, I’m creating a method named <code>hoot()</code> that logs a message to the console:
+ <pre><code>var apeProto = Object.create(HTMLElement.prototype);
+ apeProto.hoot = function() {
+ console.log('Apes are great!');
+ }
+ </code></pre>
+ The next step is to register the element, just as before, only this time adding an argument in the options of <code>registerElement()</code> to state that it should use our newly defined prototype:
+ <pre><code>document.registerElement('great-apes', {prototype: apeProto});
+ </code></pre>
+ When this is done, you can query your element in the DOM and call the method:
+ <pre><code>var apes = document.querySelector('great-apes');
+ apes.hoot();
+ </code></pre>
+ Now, this is the simplest example I could possibly think of, but just take a minute to consider how this could be extended further still: adding unique properties, attributes and events to each element; putting markup in your element that renders with content passed in as attribute values; even having elements with no UI at all but that perform functions such as database queries. Honestly, the opportunity here is <em>huge</em>.
+ 
+ As a quick example of just how exceptionally useful Custom Elements can be, see<a href="https://github.com/eduardolundgren/google-maps-element">Eduardo Lundgren’s <code>google-maps</code></a> element, which embeds a Google Map and can have options passed in through attribute values, like this:
+ <pre><code>&lt;google-maps latitude="-8.034881" longitude="-34.918377"&gt;&lt;/google-maps&gt;
+ </code></pre>
+ <h3>“Can Existing Elements Be Extended To Use This API?”</h3>
+ Wow, you really ask the most convenient questions. Yes, excitingly, we <em>can</em> make Custom Elements that extend existing elements. Yes, we can create a whole new API for existing HTML elements! I know, this sounds like the ramblings of a madman, right? But it’s true!
+ 
+ As an example, let’s create a table that has our <code>hoot()</code> method attached. To do this, we’d follow all of the steps in the previous section, then make the small addition of a new argument in the options of the <code>registerElement()</code> method, a lá:
+ <pre><code>document.registerElement('great-apes', {
+ prototype: apeProto,
+ extends: 'table'
+ });
+ </code></pre>
+ The value of the <code>extends</code> argument informs the DOM that the custom element is intended to extend the <code>table</code> element. Now, we have to make the <code>table</code> element inform the DOM that it wants to be extended, using the <code>is</code> attribute:
+ <pre><code>&lt;table is="great-apes"&gt;…&lt;/table&gt;
+ </code></pre>
+ The humble <code>table</code> element may now have its own API. For example, it could query its own data in a standardized interface. A table that has an API to query its own data!!!How can you not be excited by that?
+ 
+ For a real-world example of an extended element, take a look at <a href="https://github.com/eduardolundgren/video-camera-element">Eduardo Lundgren’s<code>video-camera</code></a>, which extends the <code>video</code> element to use live input from <code>getUserMedia():</code>
+ <pre><code>&lt;video is="video-camera"&gt;&lt;/video&gt;
+ </code></pre>
+ <code> </code>
+]]>
+</content:encoded>
+<excerpt:encoded>
+<![CDATA[ ]]>
+</excerpt:encoded>
+<wp:post_id>36</wp:post_id>
+<wp:post_date>2014-03-05 10:56:30</wp:post_date>
+<wp:post_date_gmt>2014-03-05 10:56:30</wp:post_date_gmt>
+<wp:comment_status>open</wp:comment_status>
+<wp:ping_status>open</wp:ping_status>
+<wp:post_name>a-detailed-introduction-to-custom-elements-2</wp:post_name>
+<wp:status>publish</wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type>post</wp:post_type>
+<wp:post_password/>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="coding">
+<![CDATA[ Coding ]]>
+</category>
+<category domain="category" nicename="javascript">
+<![CDATA[ Javascript ]]>
+</category>
+<wp:postmeta>
+<wp:meta_key>_edit_last</wp:meta_key>
+<wp:meta_value>
+<![CDATA[ 1 ]]>
+</wp:meta_value>
+</wp:postmeta>
+</item>
+<item>
+<title>Behind The Scenes</title>
+<link>http://localhost:8888/wordpress/?p=38</link>
+<pubDate>Wed, 05 Mar 2014 11:01:18 +0000</pubDate>
+<dc:creator>
+<![CDATA[ admin ]]>
+</dc:creator>
+<guid isPermaLink="false">http://localhost:8888/wordpress/?p=38</guid>
+<description/>
+<content:encoded>
+<![CDATA[
+f you’re a graphic designer, you will often have to work with off-the-shelf material created by others — for instance, combining ready-to-use fonts with images from a photographer or stock website. Also, you’ll often have to follow the branding already developed by someone else. It’s OK; it’s a part of the job, and you shouldn’t be bothered by it.
+ 
+ But the part of a project that almost every graphic designer likes and is proud of the most is something that you can do from scratch, something that you have control over and can sign off on confidently: illustration. It’s why I love illustration projects so much. You can show your individuality in every detail and create every stroke of the artwork, trusting your vision and fully exercising your skills.
+ 
+ Given this love of mine, it’s no surprise that I took on illustration duties for the <a href="http://www.smashingmagazine.com/books/#the-smashing-book-4">Smashing Book #4</a> without hesitation, despite it being quite a large and lengthy project (20 illustrations). I pulled myself together and started working, promising to myself that no matter how hard it turned out to be, I would find the time and internal resources to complete the project.
+ 
+ I’m very keen on the traditional way of drawing — by hand, using paper, pencil, watercolors and so on. Of course, I’m not against using computers when necessary — especially nowadays, when we have drawing tablets and pens and all of that other digital stuff that mimics hand-drawn work. But it seems to me that there is still no substitute for the charm of a well thought out and elaborate handmade drawing.
+ 
+ My process for transforming illustrations into vector files is a little complicated and sometimes long, but it’s the only way to capture my drawings down to the smallest details. Retracing every line of the illustration as a curve using the Pen tool (in Adobe Illustrator, in my case), I am able to really feel every line and make the drawing as close to perfect as possible.
+ 
+ I began each of the 20 illustrations with many ugly sketches, trying to grab hold of an idea. I’m not able to think first and draw after. The two processes are one for me: I draw while thinking. I’ll waste piles of paper and use any surface at hand to capture an idea that suddenly comes to me. Reviewing the sketches now, I’m intrigued by the evolution of the ideas and the birth of the characters.
+ 
+ <a href="http://media.smashingmagazine.com/wp-content/uploads/2014/02/1-smashing-book-4-illustration-1000-opt.jpg"><img title="" alt="" src="http://media.smashingmagazine.com/wp-content/uploads/2014/02/1-smashing-book-4-illustration-500-opt.jpg" /></a>
+ <em>Looking for ideas. (<a href="http://media.smashingmagazine.com/wp-content/uploads/2014/02/1-smashing-book-4-illustration-1000-opt.jpg">View large version</a>)</em>
+ 
+ <a href="http://media.smashingmagazine.com/wp-content/uploads/2014/02/2-smashing-book-4-illustration-1000-opt.jpg"><img title="" alt="" src="http://media.smashingmagazine.com/wp-content/uploads/2014/02/2-smashing-book-4-illustration-500-opt.jpg" /></a>
+ <em>(<a href="http://media.smashingmagazine.com/wp-content/uploads/2014/02/2-smashing-book-4-illustration-1000-opt.jpg">View large version</a>)</em>
+ 
+ <a href="http://media.smashingmagazine.com/wp-content/uploads/2014/02/3-smashing-book-4-illustration-1000-opt.jpg"><img title="" alt="" src="http://media.smashingmagazine.com/wp-content/uploads/2014/02/3-smashing-book-4-illustration-500-opt.jpg" /></a>
+ <em>The evolution of a character from start to finish. (<a href="http://media.smashingmagazine.com/wp-content/uploads/2014/02/3-smashing-book-4-illustration-1000-opt.jpg">View large version</a>)</em>
+ 
+ Then, I made detailed drawings in pencil, which became the prototypes of the vector images. The more developed the drawing, the easier it was to create a vector image. When the pencil drawings were ready, I scanned or photographed them, and then painted with the usual brushes in Photoshop. These were the prototypes that I submitted for approval.
+]]>
+</content:encoded>
+<excerpt:encoded>
+<![CDATA[
+If you’re a graphic designer, you will often have to work with off-the-shelf material created by others — for instance, combining ready-to-use fonts with images from a photographer or stock website. Also, you’ll often have to follow the branding already developed by someone else.
+ Smashing Book #4: Behind The Scenes
+ It’s OK; it’s a part of the job, and you shouldn’t be bothered by it. But the part of a project that almost every graphic designer likes and is proud of the most is something that you can do from scratch, something that you have control over and can sign off on confidently: illustration.
+]]>
+</excerpt:encoded>
+<wp:post_id>38</wp:post_id>
+<wp:post_date>2014-03-05 11:01:18</wp:post_date>
+<wp:post_date_gmt>2014-03-05 11:01:18</wp:post_date_gmt>
+<wp:comment_status>open</wp:comment_status>
+<wp:ping_status>open</wp:ping_status>
+<wp:post_name>behind-the-scenes</wp:post_name>
+<wp:status>publish</wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type>post</wp:post_type>
+<wp:post_password/>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="design">
+<![CDATA[ Design ]]>
+</category>
+<category domain="category" nicename="web-design">
+<![CDATA[ Web design ]]>
+</category>
+<wp:postmeta>
+<wp:meta_key>_edit_last</wp:meta_key>
+<wp:meta_value>
+<![CDATA[ 1 ]]>
+</wp:meta_value>
+</wp:postmeta>
+</item>
+<item>
+<title>
+How To Use Analytics To Build A Smarter Mobile Website
+</title>
+<link>http://localhost:8888/wordpress/?p=40</link>
+<pubDate>Wed, 05 Mar 2014 11:02:51 +0000</pubDate>
+<dc:creator>
+<![CDATA[ admin ]]>
+</dc:creator>
+<guid isPermaLink="false">http://localhost:8888/wordpress/?p=40</guid>
+<description/>
+<content:encoded>
+<![CDATA[
+Mobile first! Responsive design! You’ve heard all of the buzzwords and catchphrases. Countless helpful and not-so-helpful articles proclaim the rise of mobile, but what practical steps can you take to make your brand more approachable for mobile users?
+ 
+ When arguing a case to make a website mobile-friendly, abundant evidence exists to present to the business owner, such as the <a href="http://www.pewinternet.org/2013/06/05/smartphone-ownership-2013/">Pew Research study</a> that shows that 56% of US adults carry around a smartphone. However, while general statistics are useful for demonstrating the value of designing with mobile in mind, they don’t provide the guidance necessary to understand precisely how users will interact with a particular brand on their phone.
+ 
+ Frequently, design and development teams will be asked to redesign a dated website to be responsive. Looking at existing data would provide crucial insight into how best to present information to mobile users. Google Analytics offers a number of free features for incredibly detailed analysis of mobile activity, with the ability to easily compare to desktop activity.
+ 
+ If you haven’t yet installed Google Analytics, setting it up is easy. Just <a href="http://www.google.com/analytics/">create a free account</a>, and then Google will walk you through the process. You’ll need to place a tracking code in your page before you can start to collect the sort of data that we’ll review in this article.
+ <h3>Analyzing Mobile Visits Via Reports</h3>
+ The standard reports are where most people browse in Google Analytics. Let’s look at the most important ones for mobile activity.
+ <h4>1. OVERVIEW</h4>
+ This report (at “Audience” → “Mobile” → “Overview”) breaks down visits by mobile, desktop and tablet. It’s helpful for quickly seeing high-level statistics, such as what percentage of visits are from mobile devices.
+ 
+ <a href="http://media.smashingmagazine.com/wp-content/uploads/2014/03/1-Mobile-Visits-Overview-Report-large.jpg"><img title="Mobile Visits Overview Report" alt="Mobile Visits Overview Report" src="http://media.smashingmagazine.com/wp-content/uploads/2014/03/1-Mobile-Visits-Overview-Report-500px.jpg" /></a>
+ <em>A preview of the mobile overview report available in Google Analytics. (<a href="http://mobile.smashingmagazine.com/2014/03/03/how-to-use-analytics-to-build-smarter-mobile-websites/1-Mobile-Visits-Overview-Report-large.jpg">Large preview</a>)</em>
+ 
+ When clients question the value of making a static website responsive, I find that simply showing them how many mobile visits they’re getting often helps to convince them. If the experience of a significant portion of users is less than optimal, then the owner should realize that it’s time to take their needs seriously. In my experience, desktop activity accounts for only about 50 to 60% of visits, with mobile and tablet combined making up the rest (close to half!).
+]]>
+</content:encoded>
+<excerpt:encoded>
+<![CDATA[ ]]>
+</excerpt:encoded>
+<wp:post_id>40</wp:post_id>
+<wp:post_date>2014-03-05 11:02:51</wp:post_date>
+<wp:post_date_gmt>2014-03-05 11:02:51</wp:post_date_gmt>
+<wp:comment_status>open</wp:comment_status>
+<wp:ping_status>open</wp:ping_status>
+<wp:post_name>
+how-to-use-analytics-to-build-a-smarter-mobile-website
+</wp:post_name>
+<wp:status>publish</wp:status>
+<wp:post_parent>0</wp:post_parent>
+<wp:menu_order>0</wp:menu_order>
+<wp:post_type>post</wp:post_type>
+<wp:post_password/>
+<wp:is_sticky>0</wp:is_sticky>
+<category domain="category" nicename="design">
+<![CDATA[ Design ]]>
+</category>
+<category domain="category" nicename="mobile-design">
+<![CDATA[ Mobile Design ]]>
+</category>
+<wp:postmeta>
+<wp:meta_key>_edit_last</wp:meta_key>
+<wp:meta_value>
+<![CDATA[ 1 ]]>
 </wp:meta_value>
 </wp:postmeta>
 </item>
