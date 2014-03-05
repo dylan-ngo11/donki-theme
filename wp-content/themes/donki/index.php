@@ -14,17 +14,19 @@
 								<li class="entry-comments"><a href="#"><?php comments_popup_link('', '1 Comment', '% Comments'); ?></a></li>
 							</ul><!-- .entry-meta -->
 							<div class="entry-content">
-								<?php the_content('...') ?>
+								<?php the_excerpt(); ?>
 							</div><!-- .entry-content -->
 							<a class="more-link" href="<?php the_permalink(); ?>">Read More</a>
 						</article>
+						
 					<?php endwhile; ?>
 						<ul class="site-pagination col-lg-10">
-							<?php if($wp_query->max_num_pages > 1 ) : ?>
-								<li><?php next_posts_link('Previous'); ?></li>
-								
-								<li><a href="#"><?php previous_posts_link('Next'); ?> </a></li>
-							<?php endif; ?>
+							<?php if ( function_exists('base_pagination') ) { base_pagination(); } else if ( is_paged() ) { ?>
+							<div class="navigation clearfix">
+							    <div class="alignleft"><?php next_posts_link('&laquo; Previous Entries') ?></div>
+							    <div class="alignright"><?php previous_posts_link('Next Entries &raquo;') ?></div>
+							</div>
+							<?php } ?>
 						</ul><!-- .site-pagination -->
 					<?php else : ?>
 						<article>

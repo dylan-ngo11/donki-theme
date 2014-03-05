@@ -87,13 +87,13 @@
 								        foreach ( $categories as $category ) {
 								            if ( $category->category_parent == $parent ) {
 								                
-								                echo '<h1><a href="#">'.$category->name.'</a></h1>';
+								                echo '<h1><a href="'.get_category_link($category->cat_ID ).'">'.$category->name.'</a></h1>';
 								                $subcategories=  get_categories('child_of='.intval($category->cat_ID).'&hide_empty=0');
 								                if($subcategories){
 									                echo '<ul>';
 									                	foreach ($subcategories as $subcategory) {
 												            echo '<li>';
-												            echo '<a href="">'.$subcategory->cat_name.'</a></li>';
+												            echo '<a href="'.get_category_link($category->cat_ID ).'">'.$subcategory->cat_name.'</a></li>';
 												        }
 									                echo '</ul>';
 								            	}	
