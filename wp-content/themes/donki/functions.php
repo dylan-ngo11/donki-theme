@@ -2,8 +2,7 @@
 <?php  
 	register_nav_menus( 
 		array(
-			'top_header_menu' => 'Top Header: Menu at top of header',
-			'left_menu' => 'Left Header: Menu at left of website'
+			'top_header_menu' => 'Top Header: Menu at top of header'
 		)
 	);
 

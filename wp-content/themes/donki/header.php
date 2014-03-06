@@ -59,9 +59,7 @@
 										);
 									
 										wp_nav_menu( $args ); ?>
-
-									
-								<?php endif; ?>
+									<?php endif; ?>
 								</div>
 							</nav><!-- .site-navigation -->						
 						</div><!-- .row -->
