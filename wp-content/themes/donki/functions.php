@@ -1,5 +1,8 @@
-<?php require_once('widget-recent-post.php'); ?>
-<?php  
+<?php 
+	require_once('widget-recent-post.php'); 
+?>
+<?php
+
 	register_nav_menus( 
 		array(
 			'top_header_menu' => 'Top Header: Menu at top of header'
