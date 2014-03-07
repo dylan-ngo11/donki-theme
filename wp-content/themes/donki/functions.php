@@ -1,5 +1,6 @@
 <?php 
 	require_once('widget-recent-post.php'); 
+	require_once(dirname(__FILE__).'/sample/sample-config.php');
 ?>
 <?php
 

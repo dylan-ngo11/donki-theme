@@ -1327,10 +1327,10 @@ if (!class_exists("Redux_Framework_sample_config")) {
         public function setArguments() {
 
             $theme = wp_get_theme(); // For use with some settings. Not necessary.
-
+            global $test_theme;
             $this->args = array(
                 // TYPICAL -> Change these values as you need/desire
-                'opt_name' => 'redux_demo', // This is where your data is stored in the database and also becomes your global variable name.
+                'opt_name' => 'test_theme', // This is where your data is stored in the database and also becomes your global variable name.
                 'display_name' => $theme->get('Name'), // Name that appears at the top of your panel
                 'display_version' => $theme->get('Version'), // Version that appears at the top of your panel
                 'menu_type' => 'menu', //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
